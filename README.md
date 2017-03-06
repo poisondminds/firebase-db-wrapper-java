@@ -4,12 +4,12 @@ An easy-to-use wrapper for Firebase's Realtime Database
 **Dependencies:** FirebaseDatabase, FirebaseStorage
 
 For demonstration purposes, we'll use the database structure defined below, comprised of murals and artists:
-
 ```json
 {
   "murals" : 
   {
-    "-KaQYfs3kbt4XgDY0ftb" : {
+    "-KaQYfs3kbt4XgDY0ftb" : 
+    {
       "artists" : 
       {
         "-KbJbPknFNECn07m1yzy" : true,
