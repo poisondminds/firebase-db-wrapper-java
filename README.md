@@ -27,13 +27,6 @@ For demonstration purposes, we'll use the database structure defined below, comp
           "location" : "/murals/m2.jpg"
         }
       },
-      "location" : {
-        "city" : "Orange",
-        "lat" : 55,
-        "long" : 3543.2,
-        "name" : "Some building",
-        "state" : "CA"
-      },
       "name" : "A really great mural"
     }
   },
