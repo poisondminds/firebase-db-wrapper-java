@@ -1,4 +1,4 @@
-package edu.chapman.cpsc370.muraltest.firebase_db_wrapper;
+package com.poisondminds.firebase_db_wrapper;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -25,8 +25,12 @@ public abstract class FIRWritableModel extends FIRModel
                 .setValue(this, completionListener);
     }
 
-
     public void create()
+    {
+        create(null);
+    }
+
+    public void create(DatabaseReference.CompletionListener completionListener)
     {
         if (this.key != null)
         {
@@ -34,6 +38,6 @@ public abstract class FIRWritableModel extends FIRModel
         }
 
         this.key = FirebaseDatabase.getInstance().getReference(getCollectionName()).push().getKey();
-        saveChanges();
+        saveChanges(completionListener);
     }
 }

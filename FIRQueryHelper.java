@@ -1,4 +1,4 @@
-package edu.chapman.cpsc370.muraltest.firebase_db_wrapper;
+package com.poisondminds.firebase_db_wrapper;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;

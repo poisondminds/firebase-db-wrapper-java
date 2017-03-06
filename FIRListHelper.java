@@ -1,4 +1,4 @@
-package edu.chapman.cpsc370.muraltest.firebase_db_wrapper;
+package com.poisondminds.firebase_db_wrapper;
 
 import java.util.ArrayList;
 import java.util.HashMap;
