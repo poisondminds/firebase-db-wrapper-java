@@ -6,13 +6,13 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class ModelValueEventListener<T extends FIRModel> implements ValueEventListener
+public abstract class FIRModelEventListener<T extends FIRModel> implements ValueEventListener
 {
     private Class<T> type;
 
     public abstract void onDataChange(List<T> models);
 
-    public ModelValueEventListener(Class<T> type)
+    public FIRModelEventListener(Class<T> type)
     {
         this.type = type;
     }
