@@ -7,6 +7,7 @@ public abstract class FIRModel
     @Exclude
     String key;
 
+    @Exclude
     public String getKey()
     {
         return key;
