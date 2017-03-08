@@ -62,6 +62,8 @@ public class MuralModel extends FIRModel
         mural.setKey(snapshot.getKey());
         return mural;
     }
+    
+    ...
 }
 ```
 The most important thing to note here is how a `MuralModel` should be created from a `DataSnapshot`.
