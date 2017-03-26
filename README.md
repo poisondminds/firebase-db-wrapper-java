@@ -219,6 +219,11 @@ For creating new items, use a public constructor and `create()`:
 ArtistModel artist = new ArtistModel("John", "Doe", "US");
 artist.create();
 ```
-Both `saveChanges()` and `create()` additionally have overloads that take completion listeners.
+For deleting items, simply call `delete()` in a `FIRWritableModel` instance:
+```java
+artist.delete()
+```
+
+Functions `saveChanges()`, `create()`, and `delete()` additionally have overloads with completion listeners.
 
 Enjoy!
