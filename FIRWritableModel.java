@@ -40,4 +40,22 @@ public abstract class FIRWritableModel extends FIRModel
         this.key = FirebaseDatabase.getInstance().getReference(getCollectionName()).push().getKey();
         saveChanges(completionListener);
     }
+
+    public void delete(DatabaseReference.CompletionListener completionListener)
+    {
+        if (this.key == null)
+        {
+            throw new RuntimeException("Key cannot be null when updating FIRModel");
+        }
+
+        FirebaseDatabase.getInstance()
+                .getReference(getCollectionName())
+                .child(this.getKey())
+                .removeValue(completionListener);
+    }
+
+    public void delete()
+    {
+        this.delete(null);
+    }
 }
