@@ -13,6 +13,12 @@ public class FIRQueryHelper
         artistsRef.addValueEventListener(valueEventListener);
     }
 
+    public static void Top(String collectionName, int limit, ValueEventListener valueEventListener)
+    {
+        DatabaseReference artistsRef = FirebaseDatabase.getInstance().getReference(collectionName);
+        artistsRef.limitToFirst(limit).addValueEventListener(valueEventListener);
+    }
+
     public static void FromKey(String collectionName, String key, ValueEventListener valueEventListener)
     {
         DatabaseReference artistsRef = FirebaseDatabase.getInstance().getReference(collectionName);
