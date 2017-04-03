@@ -10,13 +10,13 @@ public class FIRQueryHelper
     public static void All(String collectionName, ValueEventListener valueEventListener)
     {
         DatabaseReference artistsRef = FirebaseDatabase.getInstance().getReference(collectionName);
-        artistsRef.addValueEventListener(valueEventListener);
+        artistsRef.addListenerForSingleValueEvent(valueEventListener);
     }
 
     public static void Top(String collectionName, int limit, ValueEventListener valueEventListener)
     {
         DatabaseReference artistsRef = FirebaseDatabase.getInstance().getReference(collectionName);
-        artistsRef.limitToFirst(limit).addValueEventListener(valueEventListener);
+        artistsRef.limitToFirst(limit).addListenerForSingleValueEvent(valueEventListener);
     }
 
     public static void FromKey(String collectionName, String key, ValueEventListener valueEventListener)
@@ -30,20 +30,20 @@ public class FIRQueryHelper
     {
         DatabaseReference artistsRef = FirebaseDatabase.getInstance().getReference(collectionName);
         Query q = artistsRef.orderByChild(field).equalTo(value);
-        q.addValueEventListener(valueEventListener);
+        q.addListenerForSingleValueEvent(valueEventListener);
     }
 
     public static void WhereFieldEquals(String collectionName, String field, boolean value, ValueEventListener valueEventListener)
     {
         DatabaseReference artistsRef = FirebaseDatabase.getInstance().getReference(collectionName);
         Query q = artistsRef.orderByChild(field).equalTo(value);
-        q.addValueEventListener(valueEventListener);
+        q.addListenerForSingleValueEvent(valueEventListener);
     }
 
     public static void WhereFieldEquals(String collectionName, String field, double value, ValueEventListener valueEventListener)
     {
         DatabaseReference artistsRef = FirebaseDatabase.getInstance().getReference(collectionName);
         Query q = artistsRef.orderByChild(field).equalTo(value);
-        q.addValueEventListener(valueEventListener);
+        q.addListenerForSingleValueEvent(valueEventListener);
     }
 }

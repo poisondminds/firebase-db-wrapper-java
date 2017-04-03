@@ -22,12 +22,15 @@ public abstract class FIRModelEventListener<T extends FIRModel> implements Value
     {
         List<T> models = new ArrayList<>();
 
-        for (DataSnapshot snapshot : dataSnapshot.getChildren())
+        if (dataSnapshot.getValue() != null)
         {
-            T model = snapshot.getValue(this.type);
-            model.setKey(snapshot.getKey());
+            for (DataSnapshot snapshot : dataSnapshot.getChildren())
+            {
+                T model = snapshot.getValue(this.type);
+                model.setKey(snapshot.getKey());
 
-            models.add(model);
+                models.add(model);
+            }
         }
 
         onDataChange(models);
